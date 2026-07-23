@@ -8,8 +8,8 @@
             </div>
             
             @empty
-                <div class="col-12">
-                    <h3 class="text-center text-secondary fw-semibold">Al momento non sono presenti articoli.</h3>
+                <div class="col-12 mt-5">
+                    <h3 class="text-center text-secondary fw-semibold ">Al momento non sono presenti articoli.</h3>
                 </div>
             @endforelse
         </div>

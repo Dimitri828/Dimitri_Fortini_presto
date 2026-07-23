@@ -69,6 +69,14 @@
                             <li class="nav-item">
                                 <a class="nav-link font-wh" href="{{ route('article.create') }}">Pubblica Annuncio</a>
                             </li>
+                            @if (Auth::user()->is_revisor)
+                            <li class="nav-item">
+                                <a class="nav-link font-wh position-relative" href="{{ route('revisor.index') }}">Zona Revisore
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{\App\Models\Article::toBeRevisedCount()}}</span>
+                                </a>
+                            </li>
+                                
+                            @endif
                         @endauth
 
                         @auth

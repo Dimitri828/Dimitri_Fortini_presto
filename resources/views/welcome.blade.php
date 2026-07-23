@@ -8,6 +8,21 @@
                 </header>
             </div>
             <div class="col-12 ">
+                
+                @if (session()->has('errorMessage'))
+                   <div class="row justify-content-center">
+                       <div class="col-5 alert alert-success text-center shadow rounded mt-5" id="revisorErrorMessage">
+                           {{ session('errorMessage') }}
+                       </div>
+                   </div>
+               @endif
+                @if (session()->has('message'))
+                   <div class="row justify-content-center">
+                       <div class="col-5 alert alert-success text-center shadow rounded " id="revisorMessage">
+                           {{ session('message') }}
+                       </div>
+                   </div>
+               @endif
                 <div class="swiper mySwiper py-5 px-5">
                     <div class="swiper-wrapper">
                         @forelse ($articles as $article )
@@ -16,13 +31,13 @@
                         </div>
                         
                         @empty
-                           <div class="swiper-slide">
-                            <h3 class="text-center">Al momento non ci sono articoli disponibili</h3>
+                           <div class="swiper-slide w-100">
+                            <h3 class="text-center text-secondary fw-semibold">Al momento non ci sono articoli disponibili</h3>
                         </div> 
                         @endforelse
                         
                     </div>
-                    <div class="swiper-pagination"></div>
+                    <div class="swiper-pagination mb-5"></div>
                 </div>
             </div>
         </div>

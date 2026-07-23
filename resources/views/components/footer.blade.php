@@ -44,7 +44,7 @@
                 <ul class="list-unstyled">
 
                     <li class="mb-2">
-                        <a href="#" class="text-secondary text-decoration-none">
+                        <a href="{{route("article.index")}}" class="text-secondary text-decoration-none">
                             Tutti gli annunci
                         </a>
                     </li>
@@ -56,8 +56,8 @@
                     </li>
 
                     <li class="mb-2">
-                        <a href="#" class="text-secondary text-decoration-none">
-                            Categorie
+                        <a href="{{route("become.revisor")}}" class="text-secondary text-decoration-none">
+                            Lavora con noi
                         </a>
                     </li>
 
