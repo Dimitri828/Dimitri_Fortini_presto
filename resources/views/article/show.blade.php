@@ -42,7 +42,8 @@
                 {{-- SWIPER END --}}
             </div>
             <div class="col-12 col-md-4 d-flex flex-column align-items-start justify-content-center ps-5 ">
-                <h2 class="fw-semibold mb-3 product-title">{{ $article->title }}</h2>
+                <h2 class="fw-semibold mb-2 product-title">{{ $article->title }}</h2>
+                <p class="h4 text-secondary fst-italic mb-4">#{{$article->category->name}}</p>
                 <h3 class=" h1 fw-bold h2 mb-1">{{ $article->price }} €</h3>
                 <p class="text-muted mb-5">Iva Inclusa</p>
                 <button class="btn-buy btn-detail">AGGIUNGI AL CARRELLO</button>

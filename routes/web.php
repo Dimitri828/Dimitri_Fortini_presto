@@ -18,3 +18,5 @@ Route::patch("/reject/{article}",[RevisorController::class,("reject")])->name("r
 // MAIL
 Route::get("/revisor/request",[RevisorController::class,("becomeRevisor")])->name("become.revisor")->middleware("auth");
 Route::get("/make/revisor/{user}",[RevisorController::class,("makeRevisor")])->name("make.revisor");
+// SEARCH
+Route::get("/search/article",[PublicController::class,("searchArticles")])->name("article.search");
