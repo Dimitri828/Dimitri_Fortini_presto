@@ -11,7 +11,7 @@
                 
                 @if (session()->has('errorMessage'))
                    <div class="row justify-content-center">
-                       <div class="col-5 alert alert-success text-center shadow rounded mt-5" id="revisorErrorMessage">
+                       <div class="col-5 alert alert-success text-center shadow rounded " id="revisorErrorMessage">
                            {{ session('errorMessage') }}
                        </div>
                    </div>

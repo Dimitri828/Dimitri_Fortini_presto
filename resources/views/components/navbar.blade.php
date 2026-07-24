@@ -79,18 +79,6 @@
                             @endif
                         @endauth
 
-                        @auth
-                            @if (Auth::user()->reviewer || Auth::user()->admin)
-                                <li class="nav-item">
-                                    <a class="nav-link font-wh" href="">Revisiona Annunci</a>
-                                </li>
-                            @endif
-                            <li class="nav-item">
-                                <a class="nav-link font-wh" aria-current="page" href="">Lavora con
-                                    Noi</a>
-                            </li>
-
-                        @endauth
 
                     </ul>
                 </div>

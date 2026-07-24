@@ -9,7 +9,7 @@
     </div>
     @if (session()->has('message'))
         <div class="row justify-content-center">
-            <div class="col-5 alert-alert-success text-center shadow rounded">
+            <div class="col-5 alert alert-success text-center shadow rounded">
                 {{ session('message') }}
             </div>
         </div>
@@ -139,7 +139,7 @@
             @else
                 <div class="row justify-content-center align-items-center ">
                     <div class="col 12">
-                        <h2 class="text-secondary fw-semibold">Nessun articolo da revisionare.</h2>
+                        <h2 class="text-secondary fw-semibold text-center mt-5">Nessun articolo da revisionare.</h2>
                     </div>
                 </div>
     @endif
