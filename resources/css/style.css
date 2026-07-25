@@ -157,7 +157,9 @@ h4,
 .navbar:hover .input-search::placeholder {
     color: var(--blk);
 }
-
+.navbar:hover .btn-search{
+    border: 1px solid #dee2e6;
+}
 /* .navbar:hover .fa-magnifying-glass{
     border-left: 2px solid grey;
     padding: 10px 0px 10px 5px;

@@ -59,24 +59,24 @@
                 <div class="col-12 col-md-4 d-flex flex-column align-items-start justify-content-center ps-5 ">
                     <h2 class="fw-semibold mb-3 product-title">{{ $article_to_check->title }}</h2>
                     <h3>Autore: {{ $article_to_check->user->name }}</h3>
-                    <h4 class="fst-italic text-muted mb-3"># {{ $article_to_check->category->name }}</h4>
+                    <h4 class="fst-italic text-muted mb-3"># {{ __("ui.".$article_to_check->category->name) }}</h4>
 
                     <h3 class=" h1 fw-bold h2 mb-1">{{ $article_to_check->price }} €</h3>
-                    <p class="text-muted mb-4">Iva Inclusa</p>
+                    <p class="text-muted mb-4">{{ __('ui.vat_included') }}</p>
 
                     <div class="d-flex pb-4 justify-content-around gap-5">
-                        <form action="{{ route('reject',["article" =>$article_to_check]) }}" method="POST">
+                        <form action="{{ route('reject', ['article' => $article_to_check]) }}" method="POST">
                             @csrf
                             @method('PATCH')
                             <button class="btn btn-review-danger btn-lg  py-2 px-4 fw-bold text-wh"><i
-                                    class="fa-solid fa-x text-wh "></i> Rifiuta </button>
+                                    class="fa-solid fa-x text-wh "></i> {{ __('ui.reject') }} </button>
                         </form>
-                        <form action="{{ route('accept',["article" =>$article_to_check] ) }}" method="POST">
+                        <form action="{{ route('accept', ['article' => $article_to_check]) }}" method="POST">
                             @csrf
                             @method('PATCH')
 
                             <button class="btn btn-review-success btn-lg py-2 px-5 fw-bold text-wh"><i
-                                    class="fa-solid fa-check text-wh"></i> Accetta</button>
+                                    class="fa-solid fa-check text-wh"></i> {{ __('ui.accept') }}</button>
                         </form>
                     </div>
                 </div>
@@ -87,11 +87,12 @@
                         <div class="accordion-tabs">
 
                             <button class="accordion-tab active" data-tab="description">
-                                Descrizione
+                                {{ __('ui.description') }}
                             </button>
 
                             <button class="accordion-tab" data-tab="information">
-                                Informazioni
+                                {{ __('ui.information') }}
+
                             </button>
 
                             <button class="accordion-tab" data-tab="information2">
@@ -139,7 +140,8 @@
             @else
                 <div class="row justify-content-center align-items-center ">
                     <div class="col 12">
-                        <h2 class="text-secondary fw-semibold text-center mt-5">Nessun articolo da revisionare.</h2>
+                        <h2 class="text-secondary fw-semibold text-center mt-5"> {{ __('ui.no_articles_to_review') }}
+                            .</h2>
                     </div>
                 </div>
     @endif

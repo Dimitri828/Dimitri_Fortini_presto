@@ -32,7 +32,7 @@
                         
                         @empty
                            <div class="swiper-slide w-100">
-                            <h3 class="text-center text-secondary fw-semibold">Al momento non ci sono articoli disponibili</h3>
+                            <h3 class="text-center text-secondary fw-semibold">{{__("ui.no_articles_available")}}</h3>
                         </div> 
                         @endforelse
                         

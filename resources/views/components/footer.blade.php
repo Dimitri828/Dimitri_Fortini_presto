@@ -10,8 +10,7 @@
                 </h3>
 
                 <p class="text-secondary">
-                    Il marketplace dove domanda e offerta si incontrano.
-                    Pubblica annunci, trova ciò che cerchi e vendi in pochi click.
+                    {{ __('ui.footer_description') }}
                 </p>
 
                 <div class="d-flex gap-3 mt-4">
@@ -39,31 +38,31 @@
 
             <div class="col-6 col-md-3 col-lg-2">
 
-                <h5 class="fw-semibold mb-3">Marketplace</h5>
+                <h5 class="fw-semibold mb-3">{{ __('ui.marketplace') }}</h5>
 
                 <ul class="list-unstyled">
 
                     <li class="mb-2">
-                        <a href="{{route("article.index")}}" class="text-secondary text-decoration-none">
-                            Tutti gli annunci
+                        <a href="{{ route('article.index') }}" class="text-secondary text-decoration-none">
+                            {{ __('ui.all_articles') }}
                         </a>
                     </li>
 
                     <li class="mb-2">
-                        <a href="{{route("article.create")}}" class="text-secondary text-decoration-none">
-                            Pubblica annuncio
+                        <a href="{{ route('article.create') }}" class="text-secondary text-decoration-none">
+                            {{ __('ui.publish_article') }}
                         </a>
                     </li>
 
                     <li class="mb-2">
-                        <a href="{{route("become.revisor")}}" class="text-secondary text-decoration-none">
-                            Lavora con noi
+                        <a href="{{ route('become.revisor') }}" class="text-secondary text-decoration-none">
+                            {{ __('ui.work_with_us') }}
                         </a>
                     </li>
 
                     <li class="mb-2">
                         <a href="#" class="text-secondary text-decoration-none">
-                            Come funziona
+                            {{ __('ui.how_it_works') }}
                         </a>
                     </li>
 
@@ -74,31 +73,31 @@
 
             <div class="col-6 col-md-3 col-lg-2">
 
-                <h5 class="fw-semibold mb-3">Supporto</h5>
+                <h5 class="fw-semibold mb-3">{{ __('ui.support') }}</h5>
 
                 <ul class="list-unstyled">
 
                     <li class="mb-2">
                         <a href="#" class="text-secondary text-decoration-none">
-                            Centro assistenza
+                            {{ __('ui.help_center') }}
                         </a>
                     </li>
 
                     <li class="mb-2">
                         <a href="#" class="text-secondary text-decoration-none">
-                            Contattaci
+                            {{ __('ui.contact_us') }}
                         </a>
                     </li>
 
                     <li class="mb-2">
                         <a href="#" class="text-secondary text-decoration-none">
-                            FAQ
+                            {{ __('ui.faq') }}
                         </a>
                     </li>
 
                     <li class="mb-2">
                         <a href="#" class="text-secondary text-decoration-none">
-                            Segnala un problema
+                            {{ __('ui.report_problem') }}
                         </a>
                     </li>
 
@@ -109,7 +108,7 @@
 
             <div class="col-md-6 col-lg-4">
 
-                <h5 class="fw-semibold mb-3">Azienda</h5>
+                <h5 class="fw-semibold mb-3">{{ __('ui.company') }}</h5>
 
                 <p class="text-secondary mb-2">
                     <i class="fa-solid fa-location-dot me-2"></i>
@@ -129,15 +128,16 @@
                 <div class="mt-4">
 
                     <a href="#" class="text-secondary text-decoration-none me-3">
-                        Privacy Policy
+                        {{ __('ui.privacy_policy') }}
                     </a>
 
                     <a href="#" class="text-secondary text-decoration-none me-3">
-                        Cookie Policy
+                        {{ __('ui.cookie_policy') }}
                     </a>
 
                     <a href="#" class="text-secondary text-decoration-none">
-                        Termini e Condizioni
+                        {{ __('ui.terms_conditions') }}
+
                     </a>
 
                 </div>
@@ -152,7 +152,8 @@
 
             <div class="col-md-6 text-center text-md-start">
                 <small class="text-secondary">
-                    © 2026 Presto.it - Tutti i diritti riservati.
+                    {{ __('ui.copyright') }}
+
                 </small>
             </div>
 

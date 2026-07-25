@@ -17,7 +17,7 @@
 
     <div class="text-center pb-4">
         <button class="btn-buy">
-            AGGIUNGI AL CARRELLO
+            {{__("ui.add_to_cart")}}
         </button>
     </div>
 </div>

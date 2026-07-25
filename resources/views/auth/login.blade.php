@@ -6,30 +6,30 @@
 
                 <form class="form-box " action="{{ route('login.store') }}" method="POST" >
                     <div class="mt-4 mb-4">
-                        <h2 class="text-center fw-semibold h1 ">Accedi</h2>
-                        <p class="text-secondary text-center">Bentornato!</p>
+                        <h2 class="text-center fw-semibold h1 ">{{__("ui.login")}}</h2>
+                        <p class="text-secondary text-center">{{__("ui.welcome_back")}}!</p>
                     </div>
                     @csrf
                     <div class="mb-4">
                         <label for="loginMail" class="form-label">Email</label>
-                        <input type="email" name="email" placeholder="Inserisci la e-mail" class="form-control " id="loginMail">
+                        <input type="email" name="email" placeholder="{{__("ui.insert_email")}}" class="form-control " id="loginMail">
                         @error('email')
                             <div class="text-danger mb-3">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="mb-4">
                         <label for="loginPassword" class="form-label">Password</label>
-                        <input type="password" name="password" placeholder="Inserisci la password" class="form-control " id="loginPassword">
+                        <input type="password" name="password" placeholder="{{__("ui.insert_password")}}" class="form-control " id="loginPassword">
                         @error('password')
                             <div class="text-danger mb-3">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="d-flex justify-content-center mt-5">
-                        <button class=" btn-submit mb-3 shadow-sm" type="submit">Accedi</button>
+                        <button class=" btn-submit mb-3 shadow-sm" type="submit">{{__("ui.login")}}</button>
                     </div>
                     <div class="mt-3">
-                        <p class="d-inline ">Non hai ancora un account?</p>
-                        <a href="{{ route('register') }}">Registrati subito!</a>
+                        <p class="d-inline ">{{__("ui.no_account_yet")}}?</p>
+                        <a href="{{ route('register') }}">{{__("ui.register_now")}}!</a>
                     </div>
                 </form>
             </div>
