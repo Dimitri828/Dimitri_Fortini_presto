@@ -12,14 +12,14 @@
                     @csrf
                     <div class="mb-4">
                         <label for="loginMail" class="form-label">Email</label>
-                        <input type="email" name="email" placeholder="{{__("ui.insert_email")}}" class="form-control " id="loginMail">
+                        <input type="email" name="email" placeholder="{{__("ui.insert_email")}}" class="form-control shadow " id="loginMail">
                         @error('email')
                             <div class="text-danger mb-3">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="mb-4">
                         <label for="loginPassword" class="form-label">Password</label>
-                        <input type="password" name="password" placeholder="{{__("ui.insert_password")}}" class="form-control " id="loginPassword">
+                        <input type="password" name="password" placeholder="{{__("ui.insert_password")}}" class="form-control shadow" id="loginPassword">
                         @error('password')
                             <div class="text-danger mb-3">{{ $message }}</div>
                         @enderror

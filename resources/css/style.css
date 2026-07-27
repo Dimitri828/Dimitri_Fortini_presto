@@ -77,6 +77,11 @@ h4,
 .text-blk {
     color: var(--blk);
 }
+
+.shadow-bottom-right {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+}
+
 .btn-buy {
     
     background-color: #3C4E5A;
@@ -160,11 +165,7 @@ h4,
 .navbar:hover .btn-search{
     border: 1px solid #dee2e6;
 }
-/* .navbar:hover .fa-magnifying-glass{
-    border-left: 2px solid grey;
-    padding: 10px 0px 10px 5px;
-    
-} */
+
 
 .logo {
     max-width: 300px;
@@ -226,6 +227,17 @@ h4,
     padding: 20px 32px 20px 24px;
     transition: 0.3s;
 }
+.card-container{
+    height: 300px;
+    
+}
+
+.card-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .card-img {
     transition: 0.3s;
 }
@@ -481,6 +493,14 @@ h4,
 
 }
 
+/* FORM CREATE */
+.img-preview{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 120px;
+    width: 120px;
+}
 /* CATEGORY */
 .bg-category{
     height: 40vh;

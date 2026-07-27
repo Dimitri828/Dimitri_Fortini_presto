@@ -6,9 +6,13 @@ use Livewire\Component;
 use Livewire\Attributes\Validate;
 use App\Models\Article;
 use Illuminate\Support\Facades\Auth;
+use Livewire\WithFileUploads;
+
 class CreateArticleForm extends Component
 {
-    
+    use WithFileUploads;    
+
+    public $article;
     public $category;
     #[Validate('required', message: "Il campo è obbligatorio.")]
     public $title;
@@ -19,6 +23,8 @@ class CreateArticleForm extends Component
     #[Validate('required', message: "Seleziona almeno una categoria.")]
     public $category_id;
     public $user_id;
+    public $images=[];
+    public $temporary_images;
 
     public function store()
     {
@@ -26,15 +32,21 @@ class CreateArticleForm extends Component
 
 
 
-        Article::create([
+        $this->article=Article::create([
             "title" => $this->title,
             "description" => $this->description,
             "price" => $this->price,
             "category_id" => $this->category_id,
             "user_id" => Auth::id(),
         ]);
-        $this->resetForm();
+
+        if (count($this->images) >0) {
+            foreach ($this->images as $image) {
+                $this->article->images()->create(["path"=> $image->store("images","public")]);
+            }
+        }
         session()->flash("message", "Annuncio creato con successo.");
+        $this->resetForm();
     }
 
     public function resetForm()
@@ -43,8 +55,27 @@ class CreateArticleForm extends Component
         $this->description = "";
         $this->price = "";
         $this->category_id = "";
+        $this->images=[];
+        $this->temporary_images=[];
     }
 
+    public function updatedTemporaryImages()
+    {
+        if ($this->validate([
+            "temporary_images.*"=>"image|max:1024",
+            "temporary_images" => "max:6"
+        ])) {
+            foreach ($this->temporary_images as $image) {
+                $this->images[] = $image;
+            }
+        }
+    }
+
+    public function removeImage($key){
+        if (in_array($key,array_keys($this->images))) {
+            unset($this->images[$key]);
+        }
+    }
     public function render()
     {
         return view('livewire.create-article-form');

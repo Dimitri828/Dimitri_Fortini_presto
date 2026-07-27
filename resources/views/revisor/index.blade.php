@@ -18,48 +18,77 @@
         <main class="container my-5">
             <div class="row">
                 <div class="col-12 col-md-7 text-center">
-                    {{-- SWIPER --}}
-                    <div class="swiper mySwiper2">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="/media/placeholder-show/1.png" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="/media/placeholder-show/2.png" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="/media/placeholder-show/3.png" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="/media/placeholder-show/5.png" />
-                            </div>
-                        </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
-                    <div thumbsSlider="" class="swiper mySwiper3">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="/media/placeholder-show/1.png" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="/media/placeholder-show/2.png" />
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="/media/placeholder-show/3.png" />
-                            </div>
+                    @if ($article_to_check->images->count())
+                        {{-- SWIPER DB IMAGES --}}
+                        <div class="swiper mySwiper2">
+                            <div class="swiper-wrapper">
+                                @foreach ($article_to_check->images as $key => $image)
+                                    <div class="swiper-slide">
+                                        <img src="{{ Storage::url($image->path) }}"
+                                            alt="Immagine {{ $key + 1 }} dell'articolo {{ $article_to_check->title }}" />
+                                    </div>
+                                @endforeach
 
-                            <div class="swiper-slide">
-                                <img src="/media/placeholder-show/5.png" />
+
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                        <div thumbsSlider="" class="swiper mySwiper3">
+                            <div class="swiper-wrapper">
+                                @foreach ($article_to_check->Images as $key => $image)
+                                    <div class="swiper-slide">
+                                        <img src="{{ Storage::url($image->path) }}"
+                                            alt="Immagine {{ $key + 1 }} dell'articolo {{ $article_to_check->title }}" />
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
-                    </div>
-                    {{-- SWIPER END --}}
+                        {{-- SWIPER DB IMAGES --}}
+                    @else
+                        {{-- SWIPER DEFAULT IMAGES --}}
+                        <div class="swiper mySwiper2">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="/media/placeholder-show/1.png" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/media/placeholder-show/2.png" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/media/placeholder-show/3.png" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/media/placeholder-show/5.png" />
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                        <div thumbsSlider="" class="swiper mySwiper3">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="/media/placeholder-show/1.png" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/media/placeholder-show/2.png" />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/media/placeholder-show/3.png" />
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <img src="/media/placeholder-show/5.png" />
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                    {{-- SWIPER END DEFAULT IMAGES --}}
                 </div>
                 <div class="col-12 col-md-4 d-flex flex-column align-items-start justify-content-center ps-5 ">
                     <h2 class="fw-semibold mb-3 product-title">{{ $article_to_check->title }}</h2>
                     <h3>Autore: {{ $article_to_check->user->name }}</h3>
-                    <h4 class="fst-italic text-muted mb-3"># {{ __("ui.".$article_to_check->category->name) }}</h4>
+                    <h4 class="fst-italic text-muted mb-3"># {{ __('ui.' . $article_to_check->category->name) }}</h4>
 
                     <h3 class=" h1 fw-bold h2 mb-1">{{ $article_to_check->price }} €</h3>
                     <p class="text-muted mb-4">{{ __('ui.vat_included') }}</p>
