@@ -9,7 +9,7 @@
                         <div class="swiper-wrapper">
                             @foreach ($article->images as $key => $image)
                                 <div class="swiper-slide">
-                                    <img src="{{ Storage::url($image->path) }}"
+                                    <img src="{{ $image->getUrl(300,300) }}"
                                         alt="Immagine {{ $key + 1 }} dell'articolo {{ $article->title }}" />
                                 </div>
                             @endforeach
@@ -21,9 +21,9 @@
                     </div>
                     <div thumbsSlider="" class="swiper mySwiper3">
                         <div class="swiper-wrapper">
-                            @foreach ($article->Images as $key => $image)
+                            @foreach ($article->images as $key => $image)
                                 <div class="swiper-slide">
-                                    <img src="{{ Storage::url($image->path) }}"
+                                    <img src="{{ $image->getUrl(300,300) }}"
                                         alt="Immagine {{ $key + 1 }} dell'articolo {{ $article->title }}" />
                                 </div>
                             @endforeach

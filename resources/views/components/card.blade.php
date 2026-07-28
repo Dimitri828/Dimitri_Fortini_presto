@@ -2,7 +2,7 @@
     <a href="{{ route('article.show', compact('article')) }}" class="card-link">
         @if ($article->images->isNotEmpty())
         <div class="overflow-hidden card-container">
-            <img src="{{Storage::url($article->images->first()->path)}}" alt="Placeholder immagine prodotto" class="img-fluid card-img mb-4">
+            <img src="{{$article->images->first()->getUrl(300,300)}}" alt="Placeholder immagine prodotto" class="img-fluid card-img mb-4">
 
         </div>
         

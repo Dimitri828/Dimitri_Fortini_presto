@@ -24,7 +24,7 @@
                             <div class="swiper-wrapper">
                                 @foreach ($article_to_check->images as $key => $image)
                                     <div class="swiper-slide">
-                                        <img src="{{ Storage::url($image->path) }}"
+                                        <img src="{{ $image->getUrl(300,300) }}"
                                             alt="Immagine {{ $key + 1 }} dell'articolo {{ $article_to_check->title }}" />
                                     </div>
                                 @endforeach
@@ -38,7 +38,7 @@
                             <div class="swiper-wrapper">
                                 @foreach ($article_to_check->Images as $key => $image)
                                     <div class="swiper-slide">
-                                        <img src="{{ Storage::url($image->path) }}"
+                                        <img src="{{ $image->getUrl(300,300) }}"
                                             alt="Immagine {{ $key + 1 }} dell'articolo {{ $article_to_check->title }}" />
                                     </div>
                                 @endforeach
