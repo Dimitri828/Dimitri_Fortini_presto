@@ -29,6 +29,10 @@ return
           // Navigation
           'home' => 'Inicio',
           'categories' => 'Categorías',
+          'languages'=> 'Idiomas',
+          'italian'=>'Italiano',
+          'english'=>'Inglés',
+          'spanish'=>'Español',
           'all_articles' => 'Todos los anuncios',
           'publish_article' => 'Publicar anuncio',
           'reviewer_area' => 'Área del revisor',

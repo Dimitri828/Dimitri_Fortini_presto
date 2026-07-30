@@ -62,7 +62,7 @@
         </div>
          <div class="mb-3">
             <label  class="form-label">Immagine {{__("ui.item")}}</label>
-            <input wire:model="temporary_images" multiple type="file"  class="form-control shadow  @error("temporary_images.*") is-invalid @enderror" placeholder="Img/">
+            <input wire:model="temporary_images" multiple type="file"  class="form-control input-group shadow  @error("temporary_images.*") is-invalid @enderror" placeholder="Img/">
             <div class="text-danger">
                 @error("temporary_images.*")
                     {{ $message }}

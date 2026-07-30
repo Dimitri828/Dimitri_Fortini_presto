@@ -28,6 +28,10 @@ return
           // Navigazione
           'home' => 'Home',
           'categories' => 'Categorie',
+          'languages' => 'Lingue',
+          'italian'=>'Italiano',
+          'english'=>'Inglese',
+          'spanish'=>'Spagnolo',
           'all_articles' => 'Tutti gli Annunci',
           'publish_article' => 'Pubblica Annuncio',
           'reviewer_area' => 'Zona Revisore',

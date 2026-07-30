@@ -20,4 +20,20 @@ tabs.forEach(tab => {
 
 });
 
+// collapse-custom
 
+
+document.addEventListener("click", function (event) {
+
+    const navbar = document.querySelector(".navbar");
+    const categories = document.querySelector("#categoriesMenu");
+    const languages = document.querySelector("#languagesMenu");
+
+    if (!navbar.contains(event.target)) {
+
+        categories.classList.remove("show");
+        languages.classList.remove("show");
+
+    }
+
+});

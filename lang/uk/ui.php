@@ -28,6 +28,10 @@ return
           // Navigation
           'home' => 'Home',
           'categories' => 'Categories',
+          'languages' => 'Languages',
+          'italian'=>'Italian',
+          'english'=>'English',
+          'spanish'=>'Spanish',
           'all_articles' => 'All Articles',
           'publish_article' => 'Publish Article',
           'reviewer_area' => 'Reviewer Area',

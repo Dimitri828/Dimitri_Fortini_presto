@@ -23,7 +23,8 @@
                        </div>
                    </div>
                @endif
-                <div class="swiper mySwiper py-5 px-5">
+               {{-- SWIPER HOMEPAGE --}}
+                <div class="swiper mySwiper py-lg-5 py-5 ">
                     <div class="swiper-wrapper">
                         @forelse ($articles as $article )
                         <div class="swiper-slide">
@@ -39,6 +40,7 @@
                     </div>
                     <div class="swiper-pagination mb-5"></div>
                 </div>
+                {{-- SWIPER HOMEPAGE END --}}
             </div>
         </div>
     </div>

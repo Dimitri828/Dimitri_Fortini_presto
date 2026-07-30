@@ -58,10 +58,6 @@ h4,
 .text-sec {
     font-size: 14px;
 }
-/* TO DO : TOGLIERE SE NON METTO FIXED TOP SULLA NAVBAR */
-.under-navbar {
-    margin-top: 200px;
-}
 
 .bg-blk {
     background-color: var(--blk);
@@ -83,8 +79,7 @@ h4,
 }
 
 .btn-buy {
-    
-    background-color: #3C4E5A;
+    background-color: rgb(60, 78, 90);
     color: white;
     border-radius: 4px;
     padding: 14px 32px;
@@ -93,11 +88,11 @@ h4,
 }
 
 .btn-buy:hover {
-  
-    background-color: #4F6272;
+    background-color: rgb(79, 98, 114);
 }
 
-.btn-submit,.btn-add {
+.btn-submit,
+.btn-add {
     background-color: var(--blk);
     color: var(--wh);
     height: 4rem;
@@ -109,29 +104,36 @@ h4,
     border-radius: 999px;
 }
 
-.btn-add{
+.btn-add {
     width: 300px;
     height: 90px;
-    
 }
 
-.btn-submit:hover, .btn-add:hover {
+.btn-submit:hover,
+.btn-add:hover {
     background-color: var(--dgrey);
     color: var(--wh);
 }
-
 
 /* NAVBAR */
 .logo-nero {
     display: none;
 }
 .navbar {
-    max-height: 200px;
+    max-height: 200vh;
     transition: 0.5s;
 }
 
+.active-color:focus {
+    color: var(--wh);
+}
+.active-color.show {
+    color: var(--wh) !important;
+}
 
-
+.navbar:hover .active-color.show {
+    color: var(--blk) !important;
+}
 
 .fa-circle-user,
 .btn {
@@ -162,10 +164,9 @@ h4,
 .navbar:hover .input-search::placeholder {
     color: var(--blk);
 }
-.navbar:hover .btn-search{
-    border: 1px solid #dee2e6;
+.navbar:hover .btn-search {
+    border: 1px solid rgb(222, 226, 230);
 }
-
 
 .logo {
     max-width: 300px;
@@ -197,29 +198,65 @@ h4,
     background-color: var(--blk);
 }
 
-.form-control{
+.form-control {
     background-color: transparent;
-    border: none ;
+    border: none;
 }
-.btn-search{
+.btn-search {
     background-color: transparent;
-    border:1px solid var(--wh);
+    border: 1px solid var(--wh);
     text-decoration: none;
 }
 .input-search,
-.btn-search{
+.btn-search {
     max-height: 50px;
-
 }
-.input-search{
+.input-search {
     width: 50%;
 }
 
-
-.input-search::placeholder{
+.input-search::placeholder {
     color: var(--wh);
 }
 
+.dropdown-custom {
+    background-color: var(--wh);
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    border: none;
+    border-radius: 0px;
+    margin-top: 0px;
+}
+
+.dropdown-custom li {
+    transition: 0.1s;
+}
+
+.dropdown-custom li:hover {
+    transform: translateX(4px);
+}
+
+.dropdown-menu {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+    pointer-events: none;
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    display: block;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
 
 /* CARD */
 .card-custom {
@@ -227,12 +264,11 @@ h4,
     padding: 20px 32px 20px 24px;
     transition: 0.3s;
 }
-.card-container{
+.card-container {
     height: 300px;
-    
 }
 
-.card-container img{
+.card-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -258,26 +294,6 @@ h4,
     text-decoration: none;
 }
 
-
-.dropdown-custom{
-    background-color: var(--wh);
-    left:0 ;
-    right: 0;
-    width: 100%;
-    max-width: 100%;
-    border: none;
-    border-radius: 0px;
-    margin-top: 0px;
-}
-
-.dropdown-custom li{
-    transition: 0.1s;
-}
-
-.dropdown-custom li:hover{
-    transform:translateX(4px)
-}
-
 /* HOMEPAGE */
 /* HEADER */
 .header {
@@ -292,11 +308,14 @@ h4,
 
 .swiper-slide {
     text-align: center;
-    font-size: 18px;
     background: var(--wh);
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.swiper-slide .card-custom {
+    width: 100%;
 }
 
 .swiper-slide img {
@@ -329,42 +348,38 @@ h4,
 .btn-detail {
     width: 100%;
     height: 54px;
-    
 }
 
-.product-title{
+.product-title {
     line-height: 1.25;
     letter-spacing: -0.02em;
 }
 
-.btn-review-danger{
-    background-color: #B23A48;
-    border-color: #B23A48;
+.btn-review-danger {
+    background-color: #b23a48;
+    border-color: #b23a48;
     color: var(--wh);
     letter-spacing: 0.02em;
 }
 
-.btn-review-danger:hover{
-    background-color: #962F3C;
-    border-color: #962F3C;
+.btn-review-danger:hover {
+    background-color: #962f3c;
+    border-color: #962f3c;
     color: var(--wh);
-
 }
 
-.btn-review-success{
-    background-color: #2F6B4F;
-    border-color: #2F6B4F;
+.btn-review-success {
+    background-color: #2f6b4f;
+    border-color: #2f6b4f;
     color: var(--wh);
     letter-spacing: 0.02em;
-
 }
 
-.btn-review-success:hover{
-    background-color: #275A42;
-    border-color: #275A42;
+.btn-review-success:hover {
+    background-color: #275a42;
+    border-color: #275a42;
     color: var(--wh);
 }
-
 
 /* SWIPER SHOW */
 
@@ -377,7 +392,6 @@ h4,
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .mySwiper2 img {
@@ -385,10 +399,7 @@ h4,
     height: 100%;
     object-fit: cover;
     border-radius: 8px;
-
 }
-
-
 
 .mySwiper3 {
     margin-top: 20px;
@@ -396,7 +407,7 @@ h4,
 }
 
 .mySwiper3 .swiper-slide {
-    opacity: .5;
+    opacity: 0.5;
     cursor: pointer;
 }
 
@@ -409,14 +420,13 @@ h4,
     height: 100%;
     object-fit: cover;
     border-radius: 8px;
-
 }
 
-.mySwiper2 .swiper-button-next{
+.mySwiper2 .swiper-button-next {
     color: var(--wh);
 }
 
-.mySwiper2 .swiper-button-prev{
+.mySwiper2 .swiper-button-prev {
     color: var(--wh);
 }
 
@@ -434,7 +444,6 @@ h4,
     border-bottom: 1px solid rgb(221, 221, 221);
 }
 
-
 .accordion-tab {
     position: relative;
     background: none;
@@ -443,79 +452,70 @@ h4,
     font-size: 42px;
     color: rgb(119, 119, 119);
     cursor: pointer;
-    transition: .3s ease;
+    transition: 0.3s ease;
 }
-
 
 .accordion-tab.active {
     color: rgb(0, 0, 0);
 }
 
-
 .accordion-tab.active::after {
-
-    content:"";
-    position:absolute;
-    bottom:-1px;
-    left:0;
-    width:100%;
-    height:3px;
-    background:#111;
-
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #111;
 }
-
 
 /* CONTENT */
 
 .accordion-content {
-    padding-top:55px;
+    padding-top: 55px;
 }
-
 
 .panel {
-    display:none;
-    max-width:1200px;
-    animation:fade .35s ease;
+    display: none;
+    max-width: 1200px;
+    animation: fade 0.35s ease;
 }
-
 
 .panel.active {
-    display:block;
+    display: block;
 }
 
-
 .panel p {
-
-    font-size:26px;
-    line-height:1.5;
-    color:var(--blk);
-    margin-bottom:40px;
-
+    font-size: 26px;
+    line-height: 1.5;
+    color: var(--blk);
+    margin-bottom: 40px;
 }
 
 /* FORM CREATE */
-.img-preview{
+.img-preview {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 120px;
     width: 120px;
 }
+
 /* CATEGORY */
-.bg-category{
+.bg-category {
     height: 40vh;
-    background-image: linear-gradient(rgba(51,51,51,0.5),rgba(51,51,51,0.5)),url(https://picsum.photos/1000/4000);
+    background-image:
+        linear-gradient(rgba(51, 51, 51, 0.5), rgba(51, 51, 51, 0.5)),
+        url(https://picsum.photos/1000/4000);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
 }
 
-.category-title{
+.category-title {
     letter-spacing: 0.05em;
     line-height: 1.25;
 }
-
 
 /* FOOTER */
 footer {
@@ -544,79 +544,64 @@ footer hr {
     opacity: 0.15;
 }
 
+/* MEDIA QUERY */
 
+@media screen and (max-width: 576px) {
+    /* NAVBAR */
+    .logo {
+        max-width: 150px;
+    }
+    .navbar {
+        
+        position: relative;
+        z-index: 1000;
+    }
+  
 
+    .navbar-brand img {
+        align-self: start;
+    }
 
-@media(max-width:768px){
+    .input-search {
+        width: 100%;
+    }
+
+    .dropdown-custom {
+        position: static;
+    }
+    /* SWIPER HOMEPAGE */
+   .swiper-slide .card-custom{
+        width: 95%;
+        
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .lg-navbar {
+        display: none;
+    }
+}
+
+@media (max-width: 1025px) {
+    .navbar{
+        background-color: var(--blk);
+    }
     .mySwiper2 {
         height: 350px;
+    }
+    .nav-link:hover {
+        border: none;
     }
 }
 
 @keyframes fade {
-
     from {
-        opacity:0;
-        transform:translateY(10px);
+        opacity: 0;
+        transform: translateY(10px);
     }
 
     to {
-        opacity:1;
-        transform:translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-/* BOTTONE SCARICATO */
-/* From Uiverse.io by AlimurtuzaCodes */
-/* .btn-custom {
-  border: none;
-  width: 15em;
-  height: 5em;
-  border-radius: 3em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  background: #1C1A1C;
-  cursor: pointer;
-  transition: all 450ms ease-in-out;
-}
-
-.sparkle {
-  fill: #AAAAAA;
-  transition: all 800ms ease;
-}
-
-.text {
-  font-weight: 600;
-  color: #AAAAAA;
-  font-size: medium;
-}
-
-.btn-custom:hover {
-  background: linear-gradient(0deg,var(--lgrey),var(--dgrey));
-  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
-  inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
-  0px 0px 0px 4px rgba(255, 255, 255, 0.2),
-  0px 0px 180px 0px var(--lgrey);
-  transform: translateY(-2px);
-}
-
-.btn-custom:hover .text {
-  color: white;
-}
-
-.btn-custom:hover .sparkle {
-  fill: white;
-  transform: scale(1.2);
-}  */
