@@ -28,23 +28,28 @@ var swiper = new Swiper('.mySwiper', {
     },
 
     breakpoints: {
-        // Mobile piccoli
+        
         0: {
             slidesPerView: 1,
             spaceBetween: 15
         },
 
-        // Tablet
+        
         768: {
             slidesPerView: 2,
             spaceBetween: 20
         },
 
-        // Desktop
+       
         1200: {
             slidesPerView: 3,
             spaceBetween: 30
         },
+        
+        1400:{
+            slidesPerView: 4,
+            spaceBetween: 30
+        }
 
     }
 });

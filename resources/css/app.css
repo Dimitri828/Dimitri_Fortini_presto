@@ -9,5 +9,6 @@
 } */
 
 @import "bootstrap";
+@import "bootstrap-icons";
 @import "swiper/css/bundle";
 @import "style";

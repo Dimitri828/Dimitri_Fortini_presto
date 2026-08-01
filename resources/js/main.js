@@ -1,3 +1,4 @@
+// Accordion
 const tabs = document.querySelectorAll(".accordion-tab");
 const panels = document.querySelectorAll(".panel");
 
@@ -37,3 +38,16 @@ document.addEventListener("click", function (event) {
     }
 
 });
+
+
+// accordion mobile
+const mobileItems = document.querySelectorAll('.mobile-item');
+
+mobileItems.forEach(item => {
+
+    item.querySelector('.mobile-header').addEventListener('click', () => {
+        item.classList.toggle('active');
+    });
+
+});
+

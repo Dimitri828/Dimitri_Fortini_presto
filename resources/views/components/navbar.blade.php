@@ -18,7 +18,7 @@
                     </div>
                 </form>
                 {{-- SEARCH END --}}
-                <div class="d-flex justify.content-end align-items-center  ">
+                <div class="d-flex justify-content-end align-items-center  ">
                     @guest
                         <a href="{{ route('login') }}"
                             class="text-decoration-none d-none d-xl-flex me-3 acces">{{ __('ui.login') }}</a>
@@ -60,28 +60,31 @@
             {{-- SECOND ROW --}}
             <div class="col-12  ">
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <x-search></x-search>
+
+                    
                     <ul class="navbar-nav  mb-2 mb-lg-0 d-flex justify-content-between  w-100 align-items-start">
-                        {{-- <x-lg-navbar /> --}}
+                        
+                        
+                        <x-xl-navbar ></x-xl-navbar>
+                       
 
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="{{ route('home') }}">{{ __('ui.home') }}</a>
                         </li>
 
 
-                        <li class="nav-item">
-                            <a class="nav-link font-wh"
-                                href="{{ route('article.index') }}">{{ __('ui.all_articles') }}</a>
-                        </li>
+                     
                         {{-- CATEGORIES --}}
-                        <li class="nav-item ">
-                            <a href="#categoriesMenu" class="nav-link active-color" data-bs-toggle="collapse"
-                                role="button" aria-expanded="false" aria-controls="categoriesMenu">
+                        <li class="nav-item  order-2">
+                            <a href="#categoriesMenu" class="nav-link active-color  categories" data-bs-toggle="dropdown" 
+                                role="button" aria-expanded="false" >
                                 {{ __('ui.categories') }}
                             </a>
-                            <div class="collapse dropdown-custom m-0 w-100" id="categoriesMenu">
-                                <ul class="row mx-0 py-0 my-0 list-unstyled w-100 ul-dropdown">
+                            <div class="dropdown-menu  dropdown-custom m-0  w-100" id="categoriesMenu">
+                                <ul class="row  mx-0 py-0 my-0 list-unstyled w-100  ">
                                     @foreach ($categories as $category)
-                                        <li class="col-lg-4 nav-item mb-3">
+                                        <li class="col-lg-4 nav-item mb-3 dropdown-item  ">
                                             <a href="{{ route('article.category', $category) }}"
                                                 class="text-decoration-none text-blk fw-semibold text-sec">
                                                 {{ __("ui.$category->name") }}
@@ -91,29 +94,18 @@
                                 </ul>
                             </div>
                         </li>
-                        {{-- <li class="nav-item text-center">
-                            <a href="#" role="button" class="nav-link active-color dropdown-toggle"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ __('ui.categories') }}
-                            </a>
-                            <ul class="dropdown-menu  dropdown-custom m-0 ">
-                                <div class="row mx-0 py-0">
-                                    @foreach ($categories as $category)
-                                        <li class="col-lg-4 nav-item  mb-3 ">
-                                            <a href="{{ route('article.category', $category) }}"
-                                                class="text-decoration-none text-blk fw-semibold text-sec">{{ __("ui.$category->name") }}</a>
-                                        </li>
-                                    @endforeach
-                                </div>
-                            </ul>
-                        </li> --}}
+
+                           <li class="nav-item order-1">
+                            <a class="nav-link font-wh"
+                                href="{{ route('article.index') }}">{{ __('ui.all_articles') }}</a>
+                        </li>
                         @auth
                             <li class="nav-item">
                                 <a class="nav-link font-wh "
                                     href="{{ route('article.create') }}">{{ __('ui.publish_article') }}</a>
                             </li>
                             @if (Auth::user()->is_revisor)
-                                <li class="nav-item">
+                                <li class="nav-item order-3">
                                     <a class="nav-link font-wh position-relative"
                                         href="{{ route('revisor.index') }}">{{ __('ui.reviewer_area') }}
                                         <span
@@ -122,12 +114,12 @@
                                 </li>
                             @endif
                         @endauth
-                        <li class="nav-item ">
+                        <li class="nav-item d-xl-none order-4">
                             <a href="#languagesMenu" class="nav-link active-color w-100" data-bs-toggle="collapse"
                                 role="button" aria-expanded="false" aria-controls="languagesMenu">
                                 {{ __('ui.languages') }}
                             </a>
-                            <div class="collapse dropdown-custom m-0 w-100" id="languagesMenu">
+                            <div class="collapse dropdown-custom m-0 w-100 " id="languagesMenu">
                                 <ul class="row mx-0 py-0 my-0 list-unstyled w-100 ul-dropdown">
                                     <li>
                                         <x-_locale lang="it" />                                        

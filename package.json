@@ -15,6 +15,7 @@
     },
     "dependencies": {
         "bootstrap": "^5.3.8",
+        "bootstrap-icons": "^1.13.1",
         "swiper": "^14.0.5"
     }
 }
