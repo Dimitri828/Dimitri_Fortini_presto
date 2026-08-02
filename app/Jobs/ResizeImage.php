@@ -4,10 +4,14 @@ namespace App\Jobs;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
+use Spatie\Image\Enums\AlignPosition;
 use Spatie\Image\Enums\CropPosition;
 use Spatie\Image\Image;
 use Spatie\Image\Enums\ImageDriver;
 use Spatie\Image\Enums\Unit;
+
+use function Laravel\Prompts\text;
+
 class ResizeImage implements ShouldQueue
 {
     use Queueable;
@@ -36,13 +40,15 @@ class ResizeImage implements ShouldQueue
         
         Image::useImageDriver(ImageDriver::Gd)->load($srcPath)
         ->crop($w,$h, CropPosition::Center)
+        ->brightness(-20)
         ->watermark(
-            base_path("resources/img/watermark.png"),
-            paddingX:5,
-            paddingY:5,
-            width:50,
-            height:50,
-            paddingUnit:Unit::Percent
+            base_path("resources/img/watermark1.png"),
+            AlignPosition::BottomRight,
+            paddingX:8,
+            paddingY:8,
+            width:100,
+            height:100,
+            
 
         )
         ->save($destPath);
