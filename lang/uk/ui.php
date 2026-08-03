@@ -35,6 +35,8 @@ return
           'all_articles' => 'All Articles',
           'publish_article' => 'Publish Article',
           'reviewer_area' => 'Reviewer Area',
+          'start_now'=>'Start Now',
+          
           // Categories
           'Elettronica' => 'Electronics',
           'Abbigliamento' => 'Clothing',

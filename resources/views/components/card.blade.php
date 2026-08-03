@@ -13,7 +13,7 @@
         </div>
         @endif
 
-        <div class="text-center">
+        <div class="text-center mt-3">
             <h3 class="fw-bold mb-3 title-card">{{ $article->title }}</h3>
 
             <p class="mb-5 py-2 px-3 text-pr">
@@ -28,7 +28,7 @@
 
     <div class="text-center pb-4">
         <button class="btn-buy">
-            {{ __('ui.add_to_cart') }}
+            {{ __('ui.add_to_cart') }} 
         </button>
     </div>
 </div>

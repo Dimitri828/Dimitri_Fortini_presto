@@ -9,9 +9,9 @@
             </div>
         </div>
     </div>
-    <main class="row ">
+    <main class="row justify-content-evenly">
         @forelse ($articles as $article)
-            <div class="col-12 col-lg-3 col-md-6 my-5 mx-3">
+            <div class="col-12 col-xl-3 col-lg-5 my-5 mx-3">
                 <x-card :$article></x-card>
             </div>
 
@@ -20,15 +20,15 @@
                 <h3 class=" text-center text-secondary fw-semibold mb-5"> {{ __('ui.no_articles_in_category') }}
                 </h3>
             </div>
-        @endforelse
-        @auth
-            <div class="col-12 text-center my-5 ">
-                <a href="{{ route('article.create') }}" class="btn-add text-decoration-none text-center py-4">
-                    {{ __('ui.publish_article') }}
-                </a>
+            @auth
+                <div class="col-12 text-center my-5 ">
+                    <a href="{{ route('article.create') }}" class="btn-add text-decoration-none text-center py-4">
+                        {{ __('ui.publish_article') }}
+                    </a>
 
-            </div>
-        @endauth
+                </div>
+            @endauth
+        @endforelse
     </main>
 
 </x-layout>

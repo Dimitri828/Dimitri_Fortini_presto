@@ -1,4 +1,4 @@
-<div class="col-12 col-md-6">
+<div class="col-12 col-md-10 col-lg-8">
     
     <form wire:submit="store" class="form-box mb-3" enctype="multipart/form-data" >
         <div class="mb-5">

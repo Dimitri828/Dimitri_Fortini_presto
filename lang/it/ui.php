@@ -35,6 +35,7 @@ return
           'all_articles' => 'Tutti gli Annunci',
           'publish_article' => 'Pubblica Annuncio',
           'reviewer_area' => 'Zona Revisore',
+          'start_now'=>'Inizia Subito',
 
           // Categories
           'Elettronica' => 'Elettronica',

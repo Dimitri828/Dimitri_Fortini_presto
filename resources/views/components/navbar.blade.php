@@ -33,6 +33,11 @@
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end">
                                 <li>
+                                    <p class="text-secondary mb-1 px-2">{{ucfirst(__("ui.hello"))}},
+                                    <span class="d-block text-secondary mb-3">{{Auth::user()->name}}</span>
+                                    </p>
+                                </li>
+                                <li>
                                     <form method="POST" action="{{ route('logout') }}">
                                         <button type="submit"
                                             class="text-decoration-none dropdown-item  text-blk h-100">{{ __('ui.logout') }}</button>
@@ -44,11 +49,13 @@
 
 
                     @endauth
-                    <button class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse"
+                    <button class="navbar-toggler " type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fa-solid fa-bars navbar-toggler-icon text-white border-white"></i>
+                        <i class="fa-solid fa-bars "></i>
                     </button>
+
+
                     <div class="d-none d-xl-flex">
                         <x-_locale lang="it" />
                         <x-_locale lang="uk" />
@@ -62,40 +69,23 @@
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <x-search></x-search>
 
-                    
+
                     <ul class="navbar-nav  mb-2 mb-lg-0 d-flex justify-content-between  w-100 align-items-start">
-                        
-                        
-                        <x-xl-navbar ></x-xl-navbar>
-                       
+
+
+                        <x-xl-navbar></x-xl-navbar>
+
 
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="{{ route('home') }}">{{ __('ui.home') }}</a>
                         </li>
 
-
-                     
-                        {{-- CATEGORIES --}}
-                        <li class="nav-item  order-2">
-                            <a href="#categoriesMenu" class="nav-link active-color  categories" data-bs-toggle="dropdown" 
-                                role="button" aria-expanded="false" >
+                        <li class="nav-item order-2 position-static categories active-color">
+                            <a class="nav-link" data-bs-toggle="collapse" href="#categoriesMenu" role="button">
                                 {{ __('ui.categories') }}
                             </a>
-                            <div class="dropdown-menu  dropdown-custom m-0  w-100" id="categoriesMenu">
-                                <ul class="row  mx-0 py-0 my-0 list-unstyled w-100  ">
-                                    @foreach ($categories as $category)
-                                        <li class="col-lg-4 nav-item mb-3 dropdown-item  ">
-                                            <a href="{{ route('article.category', $category) }}"
-                                                class="text-decoration-none text-blk fw-semibold text-sec">
-                                                {{ __("ui.$category->name") }}
-                                            </a>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </div>
                         </li>
-
-                           <li class="nav-item order-1">
+                        <li class="nav-item order-1">
                             <a class="nav-link font-wh"
                                 href="{{ route('article.index') }}">{{ __('ui.all_articles') }}</a>
                         </li>
@@ -106,29 +96,47 @@
                             </li>
                             @if (Auth::user()->is_revisor)
                                 <li class="nav-item order-3">
-                                    <a class="nav-link font-wh position-relative"
+                                    <a class="nav-link font-wh "
                                         href="{{ route('revisor.index') }}">{{ __('ui.reviewer_area') }}
                                         <span
-                                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ \App\Models\Article::toBeRevisedCount() }}</span>
+                                            class="ms-1 px-3 py-1  rounded-pill bg-secondary text-wh">{{ \App\Models\Article::toBeRevisedCount() }}</span>
                                     </a>
                                 </li>
                             @endif
                         @endauth
-                        <li class="nav-item d-xl-none order-4">
-                            <a href="#languagesMenu" class="nav-link active-color w-100" data-bs-toggle="collapse"
+
+                    </ul>
+
+                    <div class="collapse" id="categoriesMenu">
+                        <div class="container-fluid py-4 bg-wh">
+                            <div class="row">
+                                @foreach ($categories as $category)
+                                    <div class="col-12 col-md-6 col-xl-4 mb-2">
+                                        <a href="{{ route('article.category', $category) }}"
+                                            class="text-decoration-none text-blk fw-semibold d-block py-2">
+                                            {{ __("ui.$category->name") }}
+                                        </a>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled ">
+                        <li class="nav-item d-xl-none  order-4">
+                            <a href="#languagesMenu" class="nav-link active-color py-2 w-100" data-bs-toggle="collapse"
                                 role="button" aria-expanded="false" aria-controls="languagesMenu">
                                 {{ __('ui.languages') }}
                             </a>
-                            <div class="collapse dropdown-custom m-0 w-100 " id="languagesMenu">
-                                <ul class="row mx-0 py-0 my-0 list-unstyled w-100 ul-dropdown">
+                            <div class="collapse w-100" id="languagesMenu">
+                                <ul class="list-unstyled m-0 p-0 w-100">
                                     <li>
-                                        <x-_locale lang="it" />                                        
+                                        <x-_locale lang="it" />
                                     </li>
                                     <li>
-                                        <x-_locale lang="uk" />                                        
+                                        <x-_locale lang="uk" />
                                     </li>
                                     <li>
-                                        <x-_locale lang="es" />                                        
+                                        <x-_locale lang="es" />
                                     </li>
                                 </ul>
                             </div>

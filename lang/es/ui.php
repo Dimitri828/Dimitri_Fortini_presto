@@ -36,6 +36,7 @@ return
           'all_articles' => 'Todos los anuncios',
           'publish_article' => 'Publicar anuncio',
           'reviewer_area' => 'Área del revisor',
+          'start_now'=>'Empieza Ya',
           //     Categories
           'Elettronica' => 'Electrónica',
           'Abbigliamento' => 'Ropa',
