@@ -26,6 +26,7 @@ return
           'search' => 'Search',
 
           // Navigation
+          'recent_articles' => 'Artículos Recientes',
           'home' => 'Home',
           'categories' => 'Categories',
           'languages' => 'Languages',

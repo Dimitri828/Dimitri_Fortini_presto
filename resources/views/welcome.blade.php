@@ -18,6 +18,9 @@
 
                 </header>
             </div>
+            <div class="col-12 mt-5 ps-5">
+                <h2 class="fw-semibold ls-2 ">{{__("ui.recent_articles")}}</h2>
+            </div>
             <div class="col-12 ">
 
                 @if (session()->has('errorMessage'))

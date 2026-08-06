@@ -54,6 +54,8 @@ class RemoveFaces implements ShouldQueue
         $responseBatch=$googleVisionClient->batchAnnotateImages($batchRequest);
         $response = $responseBatch->getResponses()[0];
         $faces=$response->getFaceAnnotations();
+        
+        $image= SpatieImage::useImageDriver(ImageDriver::Gd)->load($src);
 
         foreach ($faces as $face) {
             $vertices=$face->getBoundingPoly()->getVertices();
@@ -64,7 +66,6 @@ class RemoveFaces implements ShouldQueue
                 $w=$bounds[2][0]-$bounds[0][0];
                 $h=$bounds[2][1]- $bounds[0][1];
         
-                $image= SpatieImage::useImageDriver(ImageDriver::Gd)->load($src);
         
                 $image->watermark(
                     base_path("resources/img/face.png"),
